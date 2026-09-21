@@ -1,0 +1,9 @@
+{
+  "appId": "com.flemzy.shop",
+  "appName": "Flemzy Phones & Accessories",
+  "webDir": "www",
+  "server": {
+    "url": "https://flemzypro.vercel.app",
+    "cleartext": true
+  }
+}
