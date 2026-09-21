@@ -19,12 +19,14 @@ workflows:
           npx cap sync ios
       - name: Build iOS app (simulator, unsigned)
         script: |
-          xcode-project build-ipa \
-            --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME" \
-            --config Debug
+          xcodebuild build \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO
     artifacts:
-      - build/ios/ipa/*.ipa
+      - build/**/*.app
       - /tmp/xcodebuild_logs/*.log
     publishing:
       email:
