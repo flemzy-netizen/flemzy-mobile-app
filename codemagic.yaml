@@ -14,12 +14,12 @@ workflows:
       - name: Install npm dependencies
         script: |
           npm install
-      - name: Install CocoaPods dependencies
-        script: |
-          cd ios/App && pod install
       - name: Sync Capacitor
         script: |
           npx cap sync ios
+      - name: Install CocoaPods dependencies
+        script: |
+          cd ios/App && pod install
       - name: Build iOS app (simulator, unsigned)
         script: |
           xcode-project build-ipa \
@@ -32,4 +32,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - highbornflemzy@gmail.com
+          - your-email@example.com
